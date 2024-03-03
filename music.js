@@ -6,7 +6,7 @@ const hamSafar = new Audio("./Music/Quratulain_Balouch___Wo_HuMSaFaR_Thaa_Lyrics
 const prevBtn = document.getElementById("previous");
 const playBtn = document.getElementById("stop");
 const nextBtn = document.getElementById("next");
-const songName = document.getElementsByClassName('.song-name');
+const songName = document.getElementById("songName");
 const playPauseIcon = document.getElementById("stop");
 
 const songs = [
@@ -28,13 +28,7 @@ let currentSong = songs[current].audio;
 songName.textContent = songs[current].audioName;
 
 playBtn.addEventListener('click',()=> {
-    if(currentSong.paused){
-        currentSong.play();
-        playPauseIcon.className = 'fa-solid fa-pause';
-    }else{
-        currentSong.pause();
-        playPauseIcon.className = 'fa-solid fa-play'
-    }
+  playPauseSong();
   })
 const updateSong = (action) => {
     currentSong.pause();
